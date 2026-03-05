@@ -1,5 +1,5 @@
 context:
-  version: 2602.0.1
+  version: 2603.0.0
 
 recipe:
   name: py-oidc-auth-split
@@ -7,7 +7,7 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/p/py-oidc-auth/py_oidc_auth-${{ version }}.tar.gz
-    sha256: 6c0cc24011b7679d22b9171b2cd45d278ecd01c579c1f95ae1a680a51f7b8bec
+    sha256: 7b1b21e0312885d3ea4ebbc95c96ff089c052763179757d843c83c69d07c1ce6
 
 build:
   number: 0
@@ -23,6 +23,9 @@ outputs:
         - python ${{ python_min }}.*
         - flit-core
         - pip
+        - glib >=2.66
+        - gtk3
+        - libxml2
       run:
         - python >=${{ python_min }}
         - httpx
